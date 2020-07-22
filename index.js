@@ -20,7 +20,7 @@ const adapterConfig = { mongoUri: process.env.CONNECT_TO };
 
 // init keystone instance
 const keystone = new Keystone({
-  name: 'jamiepask.herokuapp.com/',
+  name: 'jamiepask.herokuapp.com',
   adapter: new Adapter(adapterConfig),
   cookie: { secure: true },
   cookieSecret: process.env.COOKIE_SECRET
