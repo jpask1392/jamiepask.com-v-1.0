@@ -9,8 +9,8 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://use.typekit.net/uuv2xsf.css" />
         </Head>
         <body>
-          {/* <Main />
-          <NextScript /> */}
+          <Main />
+          <NextScript />
         </body>
       </html>
     );

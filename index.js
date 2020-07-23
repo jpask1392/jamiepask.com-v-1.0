@@ -57,7 +57,7 @@ module.exports = {
       enableDefaultRoute: false,
       // hooks: require.resolve('./admin/')
     }),
-    new NextApp({ dir: 'app' }),
+    // new NextApp({ dir: 'app' }),
   ],
   configureExpress: app => {
     app.set('trust proxy', 1);

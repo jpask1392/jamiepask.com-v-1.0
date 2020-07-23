@@ -7,8 +7,8 @@ export default function MyApp({ Component, pageProps }) {
   let getTheme = lightTheme;
   return (
     <ThemeProvider theme={getTheme}>
-      {/* <Component {...pageProps} /> */}
-      {/* <GlobalStyles currentTheme={getTheme} /> */}
+      <Component {...pageProps} />
+      <GlobalStyles currentTheme={getTheme} />
     </ThemeProvider>
   )
 }
