@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <link rel="stylesheet" href="https://use.typekit.net/uuv2xsf.css" />
+          <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/09b875e0954a4ededa70527ae/02075437b2c2a5a7a13e974db.js");</script>
         </Head>
         <body>
           <Main />
