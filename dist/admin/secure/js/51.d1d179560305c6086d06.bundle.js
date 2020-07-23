@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[51],{423:function(n,t,e){"use strict";e.r(t),e.d(t,"Node",(function(){return o})),e.d(t,"type",(function(){return r}));var c=e(1),i=e(5);let r="caption";function o({attributes:n,children:t}){return Object(c.jsx)("figcaption",Object(i.a)({css:{padding:8,textAlign:"center"}},n),t)}}}]);
