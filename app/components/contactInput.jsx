@@ -61,6 +61,7 @@ export const ContactInputText = styled(ContactInputTextUnstyled)`
     position: absolute;
     visibility: hidden;
     font-weight: ${props => props.theme.fontWeights.heading};
+    font-size: ${props => props.theme.fontSizes[4]};
 
     @media ${mediaQueries.md_up} {
       font-size: ${props => props.theme.fontSizes[2]};
@@ -73,13 +74,20 @@ export const ContactInputText = styled(ContactInputTextUnstyled)`
     border: none;
     border-bottom: 2px solid black;
     font-weight: ${props => props.theme.fontWeights.heading};
+    font-family: acumin-pro;
+    font-size: ${props => props.theme.fontSizes[4]};
 
     @media ${mediaQueries.md_up} {
       font-size: ${props => props.theme.fontSizes[2]};
     }
 
-    &:placeholder {
+    &::placeholder {
       color: #B2B2B2;
+      font-size: ${props => props.theme.fontSizes[4]};
+
+      @media ${mediaQueries.md_up} {
+        font-size: ${props => props.theme.fontSizes[2]};
+      }
     }
 
     &:focus {

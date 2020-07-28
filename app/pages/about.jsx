@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import dynamic from 'next/dynamic'
 import keystonePageRequest from '../utils/fetchRequest'
 import { Grid, Container } from "@material-ui/core"
+import { mediaQueries } from '../media_queries'
 
 function AboutPage({page, className}) {
   // Map block name<string> to components<object>
@@ -17,8 +18,8 @@ function AboutPage({page, className}) {
     <>
     <AppLayout data={page}>
       <div className={className}>
-        <div style={{ maxWidth: 1360, margin: "auto" }}>
-          <Grid container justify="center" spacing={5} className="image-grid">
+        <div className="image-grid">
+          <Grid container justify="center" spacing={5} className="image-grid__images">
             <Grid item xs={12} md={4}>
               <img style={{marginTop: 25}} src="./about__1.jpg" alt=""/>
             </Grid>
@@ -43,12 +44,36 @@ function AboutPage({page, className}) {
 }
 
 export default styled(AboutPage)`
-  padding-top: ${props => props.theme.spacing[5]};
+  padding-top: ${props => props.theme.spacing[2]};
+
+  @media ${mediaQueries.md_up} {
+    padding-top: ${props => props.theme.spacing[5]};
+  }
 
   & .image-grid {
-    img {
-      border-radius: 20px;
-      box-shadow: ${props => props.theme.boxShadow};
+    max-width: 1360px; 
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__images {
+      flex-wrap: nowrap;
+      overflow: auto;
+      justify-content: flex-start;
+
+      .MuiGrid-item {
+        min-width: 80%;
+        padding-right: 0;
+
+        @media ${mediaQueries.md_up} {
+          min-width: 0;
+        }
+
+        img {
+          border-radius: 20px;
+          box-shadow: ${props => props.theme.boxShadow};
+        }
+      }
     }
   }
 `;

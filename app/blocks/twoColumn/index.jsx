@@ -3,6 +3,7 @@ import { Grid, Container } from "@material-ui/core"
 import { PrimaryButton } from "../../components/buttons"
 import ReactMarkdown from "react-markdown"
 import Link from 'next/link';
+import { mediaQueries } from '../../media_queries'
 
 const TwoColumn = ({ data, className }) => {
   let customClassNames = data.classNames;
@@ -31,8 +32,13 @@ const TwoColumn = ({ data, className }) => {
 }
 
 export default styled(TwoColumn)`
-  padding-top: ${props => props.theme.spacing[5]};
-  padding-bottom: ${props => props.theme.spacing[5]};
+  padding-top: ${props => props.theme.spacing[2]};
+  padding-bottom: ${props => props.theme.spacing[2]};
+
+  @media ${mediaQueries.md_up} {
+    padding-top: ${props => props.theme.spacing[5]};
+    padding-bottom: ${props => props.theme.spacing[5]};
+  }
   
   &.index__services {
     .column-1 {
@@ -79,7 +85,7 @@ export default styled(TwoColumn)`
           border: 4px solid ${props => (
             props.color
               ? props.color
-              : props.theme.bg.primary
+              : '#E1E642'
           )};
           border-radius: 100px;
           transform: translateY(-0.25rem);
@@ -110,6 +116,12 @@ export default styled(TwoColumn)`
       img {
         width: 20px;
         margin-left: 10px;
+      }
+
+      text-align: center;
+
+      @media ${mediaQueries.md_up} {
+        text-align: left;
       }
     }
 

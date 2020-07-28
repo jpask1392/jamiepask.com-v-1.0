@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"jamiepask.standard_layouts"}],"uuid":"811db83d8bc1489dbb1c991682dfea5b"}

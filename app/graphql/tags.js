@@ -27,7 +27,7 @@ query {
       title
       slug
       body
-      featuredImage { id }
+      thumbnailImage { id }
       tags { name }
       excerpt
     }

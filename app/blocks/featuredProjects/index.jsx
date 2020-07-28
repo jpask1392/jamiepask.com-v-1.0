@@ -27,7 +27,7 @@ const FeaturedProjects = ({className, data}) => {
               />
             )}
             <Link href={`projects/${data.projectOne.slug}`}>
-              <a><PrimaryButton color="white"/></a>
+              <a><PrimaryButton color="white" btnText={data.projectOne.title}/></a>
             </Link>
           </div>
         </Grid>
@@ -41,7 +41,7 @@ const FeaturedProjects = ({className, data}) => {
               />
             )}
             <Link href={`projects/${data.projectTwo.slug}`}>
-              <a><PrimaryButton color="white"/></a>
+              <a><PrimaryButton color="white" btnText={data.projectTwo.title}/></a>
             </Link>
           </div>
         </Grid>
@@ -73,6 +73,11 @@ export default styled(FeaturedProjects)`
     border-radius: 20px;
     box-shadow: ${props => props.theme.boxShadow};
     overflow: hidden;
+
+    .btn__text {
+      color: white;
+      white-space: nowrap;
+    }
 
     img {
       position: absolute;

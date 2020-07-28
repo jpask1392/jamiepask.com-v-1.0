@@ -13,11 +13,13 @@ function ContactPage({page, className}) {
   const onSubmit = event => {
     event.preventDefault();
     const form = event.target;
-    const data = new FormData(formatMs);
+    // const data = new FormData(formatMs);
 
     fetch('/submit-form', {
       method: 'POST',
-      body: data
+      body: {
+        "name": "jamie"
+      }
     })
   }
 
@@ -39,7 +41,7 @@ function ContactPage({page, className}) {
               .
               I'm currently looking for 
               <ContactInputDropdown />.
-              <span>You can call me on </span>
+              <span> You can call me on </span>
               <label htmlFor="phone"></label>
               <ContactInputText name="phone" placeholder="phone"/>
               <span> or email me at </span>
@@ -47,7 +49,7 @@ function ContactPage({page, className}) {
               <span>. I look forward to talking further!</span>
               <div className="submit-btn-wrapper">
                 <button type="submit">
-                  <PrimaryButton />
+                  <PrimaryButton btnText="Send"/>
                 </button>
               </div>
             </form>
@@ -81,6 +83,25 @@ export default styled(ContactPage)`
     font-weight: ${props => props.theme.fontWeights.heading};
     line-height: 2.5;
     font-size: ${props => props.theme.fontSizes[4]};
+
+    .MuiInputBase-root {
+      font-weight: ${props => props.theme.fontWeights.heading};
+      color: #B2B2B2;
+    }
+
+    .MuiInputBase-input {
+      padding-bottom: 0;
+      font-size: ${props => props.theme.fontSizes[4]};
+
+      @media ${mediaQueries.md_up} {
+        font-size: ${props => props.theme.fontSizes[2]};
+      }
+    }
+
+    .MuiInput-underline::before,
+    .MuiInput-underline::after {
+      content: none;
+    }
 
     @media ${mediaQueries.md_up} {
       font-size: ${props => props.theme.fontSizes[2]};

@@ -76,13 +76,14 @@ const Projects = ({allProjects, className, page, allTags}) => {
           <Grid item md={7}>
             <h2>Work</h2>
             <h3>Working as a freelance contractor for // Techyscouts in Los Angeles, here are some recently completed projects. </h3>
-            <Link href='/about'><a class="link">Get to know me</a></Link>
+            <Link href='/about'><a className="link">Get to know me</a></Link>
           </Grid>
         </Grid>
       </Container>
 
       <Container>
         <Grid container className="projects">
+
           <Grid item xs>
             <ul className="filters-list">
               <li className={(currentFilter === 'all') ? 'active' : undefined}>
@@ -99,14 +100,15 @@ const Projects = ({allProjects, className, page, allTags}) => {
               ))}
             </ul>
           </Grid>
+
           <Grid item md={9}>
             <Grid container spacing={5}>
               <Grid item md={6}>
 
                   {projects.map((project, i) => (
                     (i % 2 === 0) && (
-                      <CSSTransition in={showProject} timeout={timeout} classNames="example">
-                        <ProjectCard key={i} project={project} />                   
+                      <CSSTransition key={i} in={showProject} timeout={timeout} classNames="example">
+                        <ProjectCard project={project} />                   
                       </CSSTransition>     
                     )
                   ))}
@@ -117,11 +119,12 @@ const Projects = ({allProjects, className, page, allTags}) => {
                   {projects.map((project, i) => (
                     (i % 2 !== 0) && (
                       <CSSTransition 
+                        key={i}
                         in={showProject} 
                         timeout={timeout} 
                         classNames="example" 
                         appear={true}>
-                        <ProjectCard key={i} project={project} />                   
+                        <ProjectCard project={project} />                   
                       </CSSTransition>     
                     )
                   ))}

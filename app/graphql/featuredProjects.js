@@ -4,11 +4,13 @@ export const featured_project_layout = `
     intro
     projectOne {
       id
+      title
       thumbnailImage { id }
       slug
     }	
     projectTwo {
       id
+      title
       thumbnailImage { id }
       slug
     }	

@@ -36,5 +36,16 @@ export default styled(Header)`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    a {
+      height: 30px;
+
+      svg {
+        height: 100%;
+      }
+    }
   }
 `

@@ -55,19 +55,35 @@ export const MenuButton = styled(UnstyledMenuButton)`
 
 const UnstyledPrimaryButton = (props) => {
   return (
-    <div className="btn-wrapper">
-      <div onClick={props.onClick} className={props.className}>
+    <div className={`btn-wrapper ${props.className}`}>
+      <div onClick={props.onClick} className="btn__primary">
         <span></span>
         <span></span>
       </div>
+      {props.btnText && <div className="btn__text">{props.btnText}</div>}
     </div>
   )
 }
 
 export const PrimaryButton = styled(UnstyledPrimaryButton)`
   position: relative;
-  width: 46px;
-  height: 46px;
+
+  & .btn__primary {
+    position: relative;
+    width: 46px;
+    height: 46px;
+  }
+
+  & .btn__text {
+    position: absolute;
+    font-size: 0.9rem;
+    font-family: ${props => props.theme.fontFamily.excerpts};
+    text-transform: uppercase;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 0.5rem;
+  }
 
   & span {
     position: absolute;
@@ -93,7 +109,7 @@ export const PrimaryButton = styled(UnstyledPrimaryButton)`
       border: 4px solid ${props => (
         props.color
           ? props.color
-          : props.theme.bg.primary
+          : '#E1E642'
       )};
     }  
   }

@@ -33,7 +33,7 @@ const PageHeader = (props) => {
 export default styled(PageHeader)`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   background: ${props => props.theme.bg.primary};
   text-align: center;
@@ -56,13 +56,11 @@ export default styled(PageHeader)`
 
   & .content {
     max-width: 900px;
-    top: 0;
-    position: absolute;
-    bottom: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 3.9%;
   }
 
   & h1 {
@@ -84,6 +82,7 @@ export default styled(PageHeader)`
   }
 
   & .social-icons {
-    margin-bottom: 2rem;
+    position: absolute;
+    bottom: 8%;
   }
 `;

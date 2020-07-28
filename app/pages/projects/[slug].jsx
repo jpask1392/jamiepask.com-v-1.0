@@ -85,7 +85,7 @@ const Project = ({project, allProjects, className}) => {
                   <ReactMarkdown source={project.howBody} />                  
                 </div>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={6} className="image-wrapper">
                 <div className="image">
                   {project.howImage && (
                     <Image
@@ -209,6 +209,17 @@ export default styled(Project)`
       .text {
         @media ${mediaQueries.md_up} {
           padding-right: ${props => props.theme.spacing[5]};
+        }
+      }
+
+      .image-wrapper {
+        display: block;
+        margin: auto;
+        padding-top: ${props => props.theme.spacing[4]};
+
+        @media ${mediaQueries.md_up} {
+          margin: 0;
+          padding-top: 0;
         }
       }
 

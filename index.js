@@ -17,6 +17,7 @@ const { TwoColumn } = require('./server/models/sections/twoColumn');
 const { Categories } = require('./server/models/blog/categories');
 const { Tag } = require('./server/models/tags');
 const adapterConfig = { mongoUri: process.env.CONNECT_TO };
+var nodemailer = require('nodemailer');
 
 // init keystone instance
 const keystone = new Keystone({
@@ -64,7 +65,34 @@ module.exports = {
     const express = require('express')
     app.use(express.urlencoded())
     app.route('/submit-form').post((req, res) => {
-      const name = req.body.name;
+      // const name = req.body.name;
+      console.log("hello")
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        secure: true,
+        auth: {
+            type: 'OAuth2',
+            user: 'jamiepask1392@gmail.com',
+            clientId: '507871134655-siqmphr9eg2bisqben8hbfln8c1lqvg5.apps.googleusercontent.com',
+            clientSecret: 'weNskKfAD987T9pMgwJWx5zp',
+            refreshToken: '1//044F3wDhWBnNTCgYIARAAGAQSNwF-L9Iry3K-rsOfm0IsnvHo3ljfNum1nMwQ9KbgIF3b5w68Y7al5Uia_HZyyt4dmMFSySfHG1c'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'youremail@gmail.com',
+        to: 'jamiepask1392@gmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log("jp error: ",error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
 		});
   },
 };

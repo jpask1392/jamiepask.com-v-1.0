@@ -1,6 +1,7 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { lightTheme, darkTheme } from '../theme';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import {mediaQueries} from '../media_queries'
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -36,8 +37,12 @@ const GlobalStyles = createGlobalStyle`
     font-weight: ${props => props.currentTheme.fontWeights.heading};
   }
   h2 {
-    font-size: ${props => props.currentTheme.fontSizes[1]};
+    font-size: ${props => props.currentTheme.fontSizes[2]};
     font-weight: ${props => props.currentTheme.fontWeights.heading};
+
+    @media ${mediaQueries.md_up} {
+      font-size: ${props => props.currentTheme.fontSizes[1]};
+    }
   }
   h2 + h3 {
     margin-top: 1rem;

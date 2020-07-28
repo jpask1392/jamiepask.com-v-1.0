@@ -75,18 +75,21 @@ export default styled(Navigation)`
       display: flex;
       flex-direction: column;
       height: 100%;
-      align-items: flex-end;
+      align-items: center;
+      justify-content: center;
       list-style-type: none;
       padding: 10rem ${props => props.theme.spacing[3]};
 
       @media ${mediaQueries.md_up} {
         padding: 10rem ${props => props.theme.spacing[5]};
+        align-items: flex-end;
+        justify-content: flex-start;
       }
 
       li.nav-item {
         position: relative;
         font-weight: ${props => props.theme.fontWeights.heading};
-        font-size: 5rem;
+        font-size: 3rem;
         line-height: 1;
         margin-bottom: 1rem;
         animation-name: ${slideLeft};

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Grid, Container } from '@material-ui/core';
+import { mediaQueries } from '../media_queries';
 
 const GridLines = ({className}) => (
   <div className={className}>
@@ -33,6 +34,20 @@ export default styled(GridLines)`
       border-right: 1px solid grey;
       height: 100vh;
       opacity: 0.15;
+    }
+
+    &:nth-child(odd) {
+      .gridline {
+        border-right-color: transparent;
+      }
+    }
+  }
+
+  @media ${mediaQueries.md_up} {
+    & .MuiGrid-item:nth-child(odd) {
+      .gridline {
+        border-right-color: grey;
+      }
     }
   }
 `;

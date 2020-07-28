@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 const ProjectCard = ({project, className}) => (
 
-  
     <div className={`${className} project-card`}>
       <Link href={`projects/${project.slug}`}><a>
         <div className="project-card__image">
