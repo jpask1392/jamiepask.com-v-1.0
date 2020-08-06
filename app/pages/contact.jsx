@@ -12,19 +12,20 @@ function ContactPage({page, className}) {
 
   const onSubmit = event => {
     event.preventDefault();
-    const form = event.target;
-    // const data = new FormData(formatMs);
+    var object = {};
+    const data = new FormData(event.target);
+    data.forEach((value, key) => {object[key] = value});
+    var json = JSON.stringify(object);
 
     fetch('/submit-form', {
       method: 'POST',
-      body: {
-        "name": "jamie"
-      }
-    })
+      headers: { "Content-type": "application/json"},
+      body: json
+    }).then(setSubmit(true))
   }
 
   return (
-    <AppLayout data={page}>
+    <AppLayout data={page} title={`${page.title} - Say hello!`}>
       <Container>
         <Grid container className={className}>
           <Grid item xs={12}>

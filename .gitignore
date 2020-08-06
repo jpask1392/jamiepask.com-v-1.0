@@ -1,7 +1,12 @@
 .vscode/
 node_modules/
-.env
-.env.production
+.env*
 yarn-error.log
 .next/
 dist/
+app/public
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

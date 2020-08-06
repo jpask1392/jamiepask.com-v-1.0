@@ -34,7 +34,7 @@ const RelatedProjects = ({className, data, currentProject}) => {
   return (
     <>
     {relatedProjects.map((project) => (
-      <Grid item md={4}>
+      <Grid item md={4} key={project.id}>
         <MoreProjectsCard data={project}/>
       </Grid>
     ))}

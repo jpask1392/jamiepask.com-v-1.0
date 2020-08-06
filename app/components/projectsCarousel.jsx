@@ -35,6 +35,7 @@ const ProjectsCarousel = ({allProjects, className}) => (
                     cloudName='djetpo84s'
                     publicId={project.featuredImage.id}
                     width='100%'
+                    secure={true}
                   />
                 )}
               </Slide>
@@ -52,6 +53,7 @@ const ProjectsCarousel = ({allProjects, className}) => (
                       publicId={project.logo.id}
                       width='100%'
                       className="logo"
+                      secure={true}
                     />
                   )}
                   <h4>{project.title}</h4>

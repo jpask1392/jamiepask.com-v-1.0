@@ -11,7 +11,7 @@ const Post = ({post, className}) => {
     title: post.title
   }
   return ( 
-    <AppLayout data={data}>
+    <AppLayout data={data} title={`Blog - ${data.title} - `}>
       <Container className={className}>
 
         <Container maxWidth='md'>
@@ -24,6 +24,7 @@ const Post = ({post, className}) => {
             publicId={post.featuredImage.id}
             width='100%'
             className="featured"
+            secure={true}
           />
         )}
 
@@ -41,6 +42,21 @@ const Post = ({post, className}) => {
 export default styled(Post)`
   padding-top: ${props => props.theme.spacing[5]};
   padding-bottom: ${props => props.theme.spacing[5]};
+
+  & code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    white-space: break-spaces;
+  }
+
+  & blockquote {
+    font-style: italic;
+    margin-top: ${props => props.theme.spacing[4]};
+    margin-bottom: ${props => props.theme.spacing[4]};
+    color: rgb(76 76 76);
+  }
 
   & img.featured {
     margin-top: ${props => props.theme.spacing[5]};

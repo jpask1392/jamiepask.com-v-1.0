@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import AppLayout from '../../layouts/app';
 import { Image } from "cloudinary-react"
-import { server } from '../../config'
+import { server, assetDir } from '../../config'
 import { Grid, Container } from "@material-ui/core"
 import ReactMarkdown from "react-markdown"
 import RelatedProjects from '../../blocks/relatedProjects'
@@ -25,6 +25,7 @@ const Project = ({project, allProjects, className}) => {
         cta_link: project.site,
         isProject: true
       }}
+      title={`Work - ${project.title}`}
     >
       <div className={className}>
         <Container className="overview">
@@ -32,7 +33,10 @@ const Project = ({project, allProjects, className}) => {
             <Grid item md={6} className="intro-text">
               <div>
                 <h2>Overview</h2>
-                <ReactMarkdown source={project.overview} />
+                <ReactMarkdown 
+                  source={project.overview} 
+                  transformImageUri={uri => `${assetDir}${uri}`}
+                />
               </div>
             </Grid>  
             <Grid item xs={6}>
@@ -41,6 +45,7 @@ const Project = ({project, allProjects, className}) => {
                   cloudName='djetpo84s'
                   publicId={project.introImage.id}
                   height='100%'
+                  secure={true}
                 />
               )}
             </Grid>  
@@ -55,6 +60,7 @@ const Project = ({project, allProjects, className}) => {
                   cloudName='djetpo84s'
                   publicId={project.featuredImage.id}
                   width='100%'
+                  secure={true}
                 />
               )}
             </div>
@@ -62,7 +68,10 @@ const Project = ({project, allProjects, className}) => {
 
           <Container maxWidth="sm">
             <div className="project__needs">
-              <ReactMarkdown source={project.needs} />
+              <ReactMarkdown 
+                source={project.needs}
+                transformImageUri={uri => `${assetDir}${uri}`}
+              />
             </div>
           </Container>
         </div>
@@ -71,7 +80,10 @@ const Project = ({project, allProjects, className}) => {
           <Grid container justify="center">
             <Grid item md={8}>
             <div className="project__image-list">
-              <ReactMarkdown source={project.body} />
+              <ReactMarkdown 
+                source={project.body} 
+                transformImageUri={uri => `${assetDir}${uri}`}
+              />
             </div>
             </Grid>
           </Grid>
@@ -82,7 +94,10 @@ const Project = ({project, allProjects, className}) => {
             <Grid container className="project__how">
               <Grid item md={6}>
                 <div className="text">
-                  <ReactMarkdown source={project.howBody} />                  
+                  <ReactMarkdown 
+                    source={project.howBody} 
+                    transformImageUri={uri => `${assetDir}${uri}`}
+                  />  
                 </div>
               </Grid>
               <Grid item xs={6} className="image-wrapper">
@@ -92,6 +107,7 @@ const Project = ({project, allProjects, className}) => {
                       cloudName='djetpo84s'
                       publicId={project.howImage.id}
                       width='100%'
+                      secure={true}
                     />
                   )}
                 </div>

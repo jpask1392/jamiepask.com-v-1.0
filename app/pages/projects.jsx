@@ -69,7 +69,7 @@ const Projects = ({allProjects, className, page, allTags}) => {
 
   return ( 
     <ParallaxProvider>
-    <AppLayout data={page}>
+  <AppLayout data={page} title={`Work - ${page.title}`}>
       <div className={className}>
       <Container maxWidth='md'>
         <Grid container className="header">
@@ -150,17 +150,17 @@ export default styled(Projects)`
   }
   
   & .example-enter.example-enter-active {
-    opacity: 1;
+    // opacity: 1;
     transition: all 1000ms ease-in;
   }
   
   & .example-exit {
-    opacity: 1;
+    // opacity: 1;
   }
   
   & .example-exit.example-exit-active {
-    opacity: 0;
-    transform: translateX(50px);
+    // opacity: 0;
+    // transform: translateX(50px);
     transition: all 600ms ease-in;
   }
 
@@ -184,6 +184,10 @@ export default styled(Projects)`
     top: 100px;
     list-style-type: none;
     padding: 0;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
 
     .active {
       font-weight: ${props => props.theme.fontWeights.bold};
@@ -192,6 +196,20 @@ export default styled(Projects)`
     li {
       font-size: ${props => props.theme.fontSizes[4]};
       cursor: pointer;
+      padding: 1rem;
+      border: 1px solid lightgrey;
+      border-radius: 100px;
+      line-height: 1;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1rem;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 3px 6px rgba(0, 0 ,0,0.1);
+      }
     }
   }
 

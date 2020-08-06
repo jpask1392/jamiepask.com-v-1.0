@@ -25,12 +25,14 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: ${props => props.currentTheme.fontFamily.body};
     font-size: ${props => props.currentTheme.fontSizes[5]};
+    font-weight: ${props => props.currentTheme.fontWeights.body};
     line-height: ${props => props.currentTheme.lineHeights.body};
   }
   .excerpt, .excerpt p {
     font-family: ${props => props.currentTheme.fontFamily.excerpts};
     font-size: ${props => props.currentTheme.fontSizes[5]};
     line-height: ${props => props.currentTheme.lineHeights.body};
+    font-weight: ${props => props.currentTheme.fontWeights.subheading};
   }
   h1 {
     font-size: ${props => props.currentTheme.fontSizes[0]};
@@ -78,7 +80,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: ${props => props.theme.fontSizes[4]};
   }
   blockquote {
-    border-left: 3px solid ${props => props.currentTheme.bg.primary};
+    border-left: 3px solid #E1E642;
     margin: 1rem 0;
     padding: 0 2rem;
   }

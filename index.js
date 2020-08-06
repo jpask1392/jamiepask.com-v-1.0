@@ -18,12 +18,13 @@ const { Categories } = require('./server/models/blog/categories');
 const { Tag } = require('./server/models/tags');
 const adapterConfig = { mongoUri: process.env.CONNECT_TO };
 var nodemailer = require('nodemailer');
+const bodyParser = require("body-parser");
 
 // init keystone instance
 const keystone = new Keystone({
-  name: 'jamiepask.herokuapp.com',
+  name: 'ec2-us-west-2-2a-p-nodejs.eba-ma3mmbfb.us-west-2.elasticbeanstalk.com',
   adapter: new Adapter(adapterConfig),
-  cookie: { secure: true },
+  cookie: { secure: process.env.NODE_ENV === 'production' },
   cookieSecret: process.env.COOKIE_SECRET
 });
 
@@ -62,28 +63,38 @@ module.exports = {
   ],
   configureExpress: app => {
     app.set('trust proxy', 1);
-    const express = require('express')
-    app.use(express.urlencoded())
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
+    
     app.route('/submit-form').post((req, res) => {
-      // const name = req.body.name;
-      console.log("hello")
+      const {
+        name,
+        company,
+        phone,
+        email
+      } = req.body;
+
       var transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
         auth: {
-            type: 'OAuth2',
-            user: 'jamiepask1392@gmail.com',
-            clientId: '507871134655-siqmphr9eg2bisqben8hbfln8c1lqvg5.apps.googleusercontent.com',
-            clientSecret: 'weNskKfAD987T9pMgwJWx5zp',
-            refreshToken: '1//044F3wDhWBnNTCgYIARAAGAQSNwF-L9Iry3K-rsOfm0IsnvHo3ljfNum1nMwQ9KbgIF3b5w68Y7al5Uia_HZyyt4dmMFSySfHG1c'
+          type: 'OAuth2',
+          user: 'jamiepask1392@gmail.com',
+          clientId: process.env.GMAIL_CLIENTID,
+          clientSecret: process.env.GMAIL_CLIENTSECRET,
+          refreshToken: process.env.GMAIL_REFRESHTOKEN
         }
       });
       
       var mailOptions = {
         from: 'youremail@gmail.com',
-        to: 'jamiepask1392@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
+        to: 'contact@jamiepask.com',
+        subject: 'Query sent from jamiepask.com',
+        text: `
+        My Name is ${name} from ${company}. 
+        I'm currently looking for 20. You can call me on ${phone} or email me at ${email}. 
+        I look forward to talking further!
+        `
       };
       
       transporter.sendMail(mailOptions, function(error, info){

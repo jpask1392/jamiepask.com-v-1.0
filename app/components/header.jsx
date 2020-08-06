@@ -6,8 +6,36 @@ import { mediaQueries } from '../media_queries'
 
 // Define component
 const Header = (props) => {
+  const [, setScrollPosition] = React.useState(0);
+  const [shouldHideHeader, setShouldHideHeader] = React.useState(false);
+  let previousScrollTop = 0;
+
+  function handleDocumentScroll() {
+    const { scrollTop: currentScrollTop } = document.documentElement || document.body;
+
+    // state
+    setScrollPosition(previousPosition => {
+      previousScrollTop = previousPosition;
+      return currentScrollTop;
+    });
+
+    const isScrolledDown = previousScrollTop < currentScrollTop;
+    const isMinimumScrolled = currentScrollTop > 80;
+
+    setTimeout(() => {
+      setShouldHideHeader(isScrolledDown && isMinimumScrolled);
+    }, 400);
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleDocumentScroll);
+    
+    return () =>
+      window.removeEventListener('scroll', handleDocumentScroll);
+  }, []);
+  
   return (
-    <div className={props.className}>
+    <div className={`${props.className} header ${shouldHideHeader ? 'header--hide': 'header--show'}`}>
       <Search />
       <div className="header__logo">
       <Link href="/"><a><svg xmlns="http://www.w3.org/2000/svg" width="28" height="37" viewBox="0 0 28 37"><g transform="translate(-322.154 -60)"><rect width="10" height="9" transform="translate(322.154 60)"/><rect width="10" height="9" transform="translate(322.154 79)"/><rect width="9" height="18" transform="translate(341.154 79)"/></g></svg></a></Link>
@@ -32,19 +60,34 @@ export default styled(Header)`
     padding: 0 ${props => props.theme.spacing[5]};
   }
 
-  & .header__logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    height: 100%;
+  &.header {
+    transition: transform 1s, opacity 0.3s;
 
-    a {
-      height: 30px;
+    &--show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 0.3s, opacity 1s;
+    }
 
-      svg {
-        height: 100%;
+    &--hide {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &__logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      height: 100%;
+  
+      a {
+        height: 30px;
+  
+        svg {
+          height: 100%;
+        }
       }
     }
   }

@@ -40,7 +40,7 @@ const Search = ({className}) => {
           body: JSON.stringify({query: search(searchTerm)}),
         });
         const results = await res.json();
-        setTimeout(() => setLoading(false), 1000);
+        setLoading(false);
         setSearchResults(results.data);
       })()
     } else {
@@ -84,7 +84,7 @@ const Search = ({className}) => {
                           return <li key={index}><Link href={`/blog/${result.slug}`}><a>{result.title}</a></Link></li>
                         })}
                         {searchResults.allProjects.map((result, index) => {
-                          return <li key={index}>{result.title}</li>
+                          return <li key={index}><Link href={`/projects/${result.slug}`}><a>{result.title}</a></Link></li>
                         })}
                       </ul>
                     </div>

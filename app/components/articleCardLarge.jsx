@@ -4,19 +4,22 @@ import { PrimaryButton } from "../components/buttons"
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link'
 import { Grid, Container } from "@material-ui/core"
+import { mediaQueries } from '../media_queries'
 
 const ArticleCardLarge = ({ className, data, type }) => {
+  
 	return (
 		<article className={`${className}`}>
 			{data.featuredImage && (
 				<Image
 					cloudName='djetpo84s'
 					publicId={data.featuredImage.id}
-					width='100%'
+          width='100%'
+          secure={true}
 				/>
 			)}
       <Grid container>
-        <Grid item xs={7}>
+        <Grid item md={7}>
           <div className="article-card__content">
             <div className="categories excerpt">
               {data.categories.map((cat) => <span>{cat.name}</span>)}
@@ -43,6 +46,11 @@ export default styled(ArticleCardLarge)`
   
   & .article-card__content {
     padding: ${props => props.theme.spacing[3]} 0;
+    padding-bottom: 0;
+
+    @media ${mediaQueries.md_up} {
+      padding-bottom: ${props => props.theme.spacing[3]};
+    }
 
     .card-title {
       padding: ${props => props.theme.spacing[2]} 0;

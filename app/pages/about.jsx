@@ -5,29 +5,32 @@ import dynamic from 'next/dynamic'
 import keystonePageRequest from '../utils/fetchRequest'
 import { Grid, Container } from "@material-ui/core"
 import { mediaQueries } from '../media_queries'
+import FeaturedProjects from '../blocks/featuredProjects'
+import TwoColumn from '../blocks/twoColumn'
+import { assetDir } from '../config'
 
 function AboutPage({page, className}) {
   // Map block name<string> to components<object>
   // Import dynamically when rendered to page
   const components = {
-    "featured_project_layout": dynamic(() => import('../blocks/featuredProjects')),
-    "two_column_layout": dynamic(() => import('../blocks/twoColumn'))
+    "featured_project_layout": FeaturedProjects,
+    "two_column_layout": TwoColumn
   }
   
   return (
     <>
-    <AppLayout data={page}>
+    <AppLayout data={page} title={`About me - ${page.title}`}>
       <div className={className}>
         <div className="image-grid">
           <Grid container justify="center" spacing={5} className="image-grid__images">
             <Grid item xs={12} md={4}>
-              <img style={{marginTop: 25}} src="./about__1.jpg" alt=""/>
+              <img style={{marginTop: 25}} src={`${assetDir}/about__1.jpg`} alt=""/>
             </Grid>
             <Grid item xs={12} md={6}>
-              <img style={{marginTop: 100}} src="./about__2.jpg" alt=""/>
+              <img style={{marginTop: 100}} src={`${assetDir}/about__2.jpg`} alt=""/>
             </Grid>
             <Grid item xs={12} md={2}>
-              <img src="./about__3.jpg" alt=""/>
+              <img src={`${assetDir}/about__3.jpg`} alt=""/>
             </Grid>
           </Grid>
         </div>

@@ -20,8 +20,9 @@ const Footer = props => {
       <Container className='footer__primary'>
         <div className="footer__contact">
           <h4>Say hi :)</h4>
-          <p className="excerpt">jamiepask1392@gmail.com</p>
-          <p className="excerpt">(+1)818-636-5870</p>
+          <p className="excerpt">
+            <a href="mailto:contact@jamiepask.com">contact@jamiepask.com</a>
+          </p>
           <p className="excerpt"><a className="link" href="/contact">Contact</a></p>
         </div>
         <div className="footer__arrow" onClick={scrollToTop}>

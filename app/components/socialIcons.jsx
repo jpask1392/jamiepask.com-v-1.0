@@ -9,10 +9,10 @@ import styled from 'styled-components';
 
 const SocialIcons = props => {
   const socials = [
-    {"link": "//www.facebook.com/jamie.pask.71", "icon": <FacebookIcon />},
-    {"link": "//www.instagram.com/jamiepask92/", "icon": <InstagramIcon />},
-    {"link": "//www.linkedin.com/in/jamie-pask/", "icon": <LinkedinIcon />},
-    {"link": "//github.com/jpask1392", "icon": <GithubIcon />},
+    {"link": "www.facebook.com/jamie.pask.71", "icon": <FacebookIcon />},
+    {"link": "www.instagram.com/jamiepask92/", "icon": <InstagramIcon />},
+    {"link": "www.linkedin.com/in/jamie-pask/", "icon": <LinkedinIcon />},
+    {"link": "github.com/jpask1392", "icon": <GithubIcon />},
   ]
 
   return (

@@ -24,6 +24,7 @@ const FeaturedProjects = ({className, data}) => {
                 cloudName='djetpo84s'
                 publicId={data.projectOne.thumbnailImage.id}
                 width='100%'
+                secure={true}
               />
             )}
             <Link href={`projects/${data.projectOne.slug}`}>
@@ -38,6 +39,7 @@ const FeaturedProjects = ({className, data}) => {
                 cloudName='djetpo84s'
                 publicId={data.projectTwo.thumbnailImage.id}
                 width='100%'
+                secure={true}
               />
             )}
             <Link href={`projects/${data.projectTwo.slug}`}>

@@ -23,7 +23,7 @@ const defaultTheme = {
     '1rem',     // 5 - 14px Base Size
   ],
   fontWeights: {
-    body: 400,
+    body: 300,
     subheading: 400,
     link: 600,
     bold: 700,

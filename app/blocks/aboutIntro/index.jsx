@@ -16,8 +16,8 @@ const AboutIntro = props => {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <blockquote className="split-paragraph excerpt">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no Lorem ipsum dolor sit amet, 
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no Lorem ipsum dolor sit amet, 
+            Born and raised in Cardiff, United Kingdom, I made the move to California in April 2019 to be with my now wife. After jumping through a plethora of hoops for my residency, I’m now able and excited to settle down in the Golden state.
+            Formally educated in Architectural Design and Technology, graduating in 2014 with a Bachelor of Science (Honors) from Cardiff Metropolitan University.
             <a href="/about" className="link read-more-btn">Read More</a>
             </blockquote>
           </Grid>

@@ -4,6 +4,7 @@ import { PrimaryButton } from "../../components/buttons"
 import ReactMarkdown from "react-markdown"
 import Link from 'next/link';
 import { mediaQueries } from '../../media_queries'
+import { assetDir } from '../../config';
 
 const TwoColumn = ({ data, className }) => {
   let customClassNames = data.classNames;
@@ -14,7 +15,10 @@ const TwoColumn = ({ data, className }) => {
 				<Grid container >
 					<Grid item xs={12} sm={data.asymmetric ? 4 : 6}>
 						<div className='column-1 excerpt'>
-							<ReactMarkdown source={data.column_1} />
+              <ReactMarkdown 
+                source={data.column_1} 
+                transformImageUri={uri => `${assetDir}${uri}`}
+              />
               {data.linkButton 
                 ? <Link href={data.linkButton}><a><PrimaryButton /></a></Link>
                 : null}
@@ -22,7 +26,10 @@ const TwoColumn = ({ data, className }) => {
 					</Grid>
 					<Grid item xs sm={data.asymmetric ? 8 : 6}>
 						<div className='column-2'>
-							<ReactMarkdown source={data.column_2} />
+              <ReactMarkdown 
+                source={data.column_2} 
+                transformImageUri={uri => `${assetDir}${uri}`}
+              />
 						</div>
 					</Grid>
 				</Grid>
@@ -51,8 +58,9 @@ export default styled(TwoColumn)`
     }
 
     .column-2 {
-      font-family: ${props => props.theme.fontFamily.excerpts};
       p { 
+        font-family: ${props => props.theme.fontFamily.excerpts};
+        font-weight: ${props => props.theme.fontWeights.subheading};
         font-size: ${props => props.theme.fontSizes[5]};
       }
     }

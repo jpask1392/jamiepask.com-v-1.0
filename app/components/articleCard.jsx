@@ -13,6 +13,7 @@ const ArticleCard = ({ className, data, type }) => {
             cloudName='djetpo84s'
             publicId={data.featuredImage.id}
             width='100%'
+            secure={true}
           />
         )}
       </div>

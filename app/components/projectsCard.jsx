@@ -12,6 +12,7 @@ const ProjectCard = ({project, className}) => (
               cloudName='djetpo84s'
               publicId={project.thumbnailImage.id}
               width='100%'
+              secure={true}
             />
           )}
         </div>

@@ -4,8 +4,9 @@ import { PrimaryButton } from './buttons';
 import Link from 'next/link';
 import { mediaQueries } from '../media_queries'
 
+
 // Define component
-const PageHeader = (props) => { 
+const PageHeader = (props) => {
   return (
   <header className={props.className}>
     <div className="content">

@@ -9,7 +9,7 @@ import keystonePageRequest from '../utils/fetchRequest'
 
 const Blog = ({allPosts, className, page}) => {
   return ( 
-    <AppLayout data={page}>
+    <AppLayout data={page} title={`Blog - ${page.title}`}>
       <Container className={className}>
         <Grid container spacing={5}>
           {allPosts.map((post, index) => {

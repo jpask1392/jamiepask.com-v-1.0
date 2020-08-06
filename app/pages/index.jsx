@@ -2,16 +2,17 @@ import AppLayout from '../layouts/app'
 import AboutIntro from '../blocks/aboutIntro'
 import dynamic from 'next/dynamic'
 import keystonePageRequest from '../utils/fetchRequest'
-import BlogSlideshow from "../blocks/blogSlideshow";
 import { archiveArticleQuery } from '../graphql/blog'
 import { server } from '../config'
+import FeaturedProjects from '../blocks/featuredProjects'
+import TwoColumn from '../blocks/twoColumn'
 
 function HomePage({page, allPosts}) {
   // Map block name<string> to components<object>
   // Import dynamically when rendered to page
   const components = {
-    "featured_project_layout": dynamic(() => import('../blocks/featuredProjects')),
-    "two_column_layout": dynamic(() => import('../blocks/twoColumn'))
+    "featured_project_layout": FeaturedProjects,
+    "two_column_layout": TwoColumn
   }
   
   return (

@@ -26,16 +26,17 @@ const MoreProjectsCard = ({ className, data }) => {
             cloudName='djetpo84s'
             publicId={data.thumbnailImage.id}
             width='100%'
+            secure={true}
           />
         )}
       </div>
       <div className="article-card__content">
         <div className="categories excerpt">
-          {data.tags.map((tag) => <span>{tag.name}</span>)}
+          {data.tags.map((tag, index) => <span key={index}>{tag.name}</span>)}
         </div>
-			  <h4 class="card-title">
+			  <h4 className="card-title">
           <Link href={`/${type}/[slug]`} as={`/${type}/${data.slug}`}>
-            <a class="link">{data.title}</a>
+            <a className="link">{data.title}</a>
           </Link>
         </h4>
         <div className="excerpt">
