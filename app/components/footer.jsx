@@ -21,7 +21,7 @@ const Footer = props => {
         <div className="footer__contact">
           <h4>Say hi :)</h4>
           <p className="excerpt">
-            <a href="mailto:contact@jamiepask.com">contact@jamiepask.com</a>
+            <a href="mailto:contact@jamiepask.com" className="mailto-link">contact@jamiepask.com</a>
           </p>
           <p className="excerpt"><a className="link" href="/contact">Contact</a></p>
         </div>
@@ -50,6 +50,11 @@ export default styled(Footer)`
   & .footer__contact {
     text-align: center;
     margin-bottom: 5rem;
+
+    .mailto-link {
+      color: black;
+      text-decoration: none;
+    }
 
     @media ${mediaQueries.md_up} {
       margin-bottom: 0;

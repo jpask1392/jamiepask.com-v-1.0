@@ -10,7 +10,7 @@ const Navigation = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const menuItems = [
-    {link: '/blog', text: 'Blog'},
+    // {link: '/blog', text: 'Blog'},
     {link: '/projects', text: 'Work'},
     {link: '/about', text: 'About'},
     {link: '/contact', text: 'Contact'},

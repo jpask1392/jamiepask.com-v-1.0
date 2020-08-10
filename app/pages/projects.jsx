@@ -193,7 +193,8 @@ export default styled(Projects)`
       font-weight: ${props => props.theme.fontWeights.bold};
     }
 
-    li {
+    li a {
+      display: block;
       font-size: ${props => props.theme.fontSizes[4]};
       cursor: pointer;
       padding: 1rem;

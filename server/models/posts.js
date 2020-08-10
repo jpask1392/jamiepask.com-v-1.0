@@ -35,7 +35,7 @@ exports.Posts = {
     blockstest: {
       type: Content,
       blocks: [
-        [Content.blocks.image]
+        Content.blocks.heading, [CloudinaryImage.blocks.image, { adapter }],
       ],
     },
   },
