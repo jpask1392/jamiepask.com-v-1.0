@@ -14,8 +14,6 @@ function HomePage({page, allPosts}) {
     "featured_project_layout": FeaturedProjects,
     "two_column_layout": TwoColumn
   }
-
-  console.log("bundled")
   
   return (
     <>
