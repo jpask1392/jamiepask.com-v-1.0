@@ -44,8 +44,8 @@ const HomeServices = props => {
         <Grid container spacing={0}>
           <Grid item md={7}>
             <Grid container spacing={4}>
-              {cardData.map((card) => (
-                <Grid item xs={6}>
+              {cardData.map((card, i) => (
+                <Grid item xs={6} key={i}>
                   <ServicesCard data={card} />
                 </Grid>
               ))}

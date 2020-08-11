@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import { Grid, Container } from '@material-ui/core';
 import { mediaQueries } from '../../media_queries'
+import { assetDir } from '../../config'
 
 const AboutIntro = props => {
+
+  console.log(assetDir)
+  
   return (
     <section className={props.className}>
       <Container>
@@ -23,7 +27,7 @@ const AboutIntro = props => {
           <Grid item md={6}>
             <div className="image">
               <div className="image__wrapper">
-              <img src="home__about.png" />
+              <img src={`${assetDir}/home__about.png`} />
               </div>
             </div>
           </Grid>
