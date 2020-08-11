@@ -6,6 +6,7 @@ import { archiveArticleQuery } from '../graphql/blog'
 import { server } from '../config'
 import FeaturedProjects from '../blocks/featuredProjects'
 import TwoColumn from '../blocks/twoColumn'
+import HomeServices from '../blocks/homeServices'
 
 function HomePage({page, allPosts}) {
   // Map block name<string> to components<object>
@@ -14,27 +15,15 @@ function HomePage({page, allPosts}) {
     "featured_project_layout": FeaturedProjects,
     "two_column_layout": TwoColumn
   }
+
+  console.log(page)
   
   return (
     <>
     <AppLayout data={page}>
-      {page.blocks.map((block, i) => {
-        // Render block based on block name
-        let key = Object.keys(block)[0];
-        let DynamicTagName = components[key];
-
-        // temp fix for adding extra 
-        // content section
-        if (i === 1) {
-          return (
-            <div key={i}>
-            <AboutIntro />
-            <DynamicTagName data={block[key]}/>
-            </div>
-          )
-        }
-        return <DynamicTagName key={i} data={block[key]}/>
-      })}
+      <FeaturedProjects data={page.blocks[0].featured_project_layout} />
+      <AboutIntro />
+      <HomeServices />
     </AppLayout>
     </>
   );

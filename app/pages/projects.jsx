@@ -188,6 +188,7 @@ export default styled(Projects)`
     display: flex;
     flex-wrap: wrap;
     margin-right: -1rem;
+    padding-right: 2rem;
 
     .active {
       font-weight: ${props => props.theme.fontWeights.bold};
