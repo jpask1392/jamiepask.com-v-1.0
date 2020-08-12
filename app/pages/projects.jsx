@@ -75,7 +75,7 @@ const Projects = ({allProjects, className, page, allTags}) => {
         <Grid container className="header">
           <Grid item md={7}>
             <h2>Work</h2>
-            <h3>Working as a freelance contractor for // Techyscouts in Los Angeles, here are some recently completed projects. </h3>
+            <h3>Working for // Techyscouts as one of their lead developers in Los Angeles, here are some recently completed projects.</h3>
             <Link href='/about'><a className="link">Get to know me</a></Link>
           </Grid>
         </Grid>

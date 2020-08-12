@@ -15,10 +15,10 @@ const AboutIntro = props => {
             <div className="content">
               <div className="content__introduction">
                 <h2>I'm Jamie,</h2>
-                <h3>a web developer from the United Kingdom, living it up in the city of angels.</h3>
+                <h3>a web developer from the United Kingdom, (yes- the accent is real) currently living in Los Angeles. </h3>
               </div>
               <blockquote className="excerpt">
-                Born and raised in Cardiff, United Kingdom and spent some time traveling through America and Canada. Visiting the US often eventually led to tying the knot and recently moving to Los Angeles, Brentwood area. My background in programming began after a wanting to build…
+              Born and raised in Cardiff, United Kingdom, I made the move to California in April 2019 to be with my now wife. After jumping through a plethora of hoops to obtain my residency, I’m now excited to establish and develop my career in the states. 
               </blockquote>
               <a href="/about" className="link read-more-btn">Read More</a>
             </div>

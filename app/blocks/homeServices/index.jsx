@@ -16,25 +16,25 @@ const HomeServices = props => {
       "icon": <WordpressIcon />,
       "title": "Wordpress Development",
       "completed_count": 10,
-      "summary": "Work in Wordpress Development? I’ve built up "
+      "summary": "Build custom themes and plugins with Wordpress."
     },
     {
       "icon": <ShopifyIcon />,
       "title": "Shopify Development",
       "completed_count": 5,
-      "summary": "Work in Wordpress Development? I’ve built up "
+      "summary": "Build custom themes and apps with Shopify."
     },
     {
       "icon": <ReactIcon />,
       "title": "Modern Stack Development",
       "completed_count": 3,
-      "summary": "Work in Wordpress Development? I’ve built up "
+      "summary": "Build modern Javascript web applications."
     },
     {
       "icon": <DesignIcon />,
       "title": "Custom Web Design",
       "completed_count": 3,
-      "summary": "Work in Wordpress Development? I’ve built up "
+      "summary": "Design custom styles with Adobe XD."
     }
   ];
 
@@ -58,7 +58,7 @@ const HomeServices = props => {
                 <h3>Looking for the next member of your awesome team? </h3>
               </div>
               <p className="excerpt">
-                On top of the following and because of a strong foundational knowledge base, I’m able to quickly pick up new technologies to help immerse myself in your chosen tech stack.
+              Recognizing the importance of a strong foundation of programming basics, I’m able to quickly pick up new technologies and fully immerse myself in your chosen tech stack.
               </p>
             </div>
           </Grid>

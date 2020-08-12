@@ -28,7 +28,21 @@ const ProjectCard = ({project, className}) => (
     </div>
 )
 
-export default styled(ProjectCard)`    
+export default styled(ProjectCard)`  
+    // position: relative;
+    // overflow: hidden;
+          
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   left: 90%;
+    //   top: 0;
+    //   background: white;
+    //   z-index: 1;
+    //   width: 100%;
+    //   height: 100%;
+    //   transition: all 0.2s;
+    // }
 
     & .project-card__text {
       margin-top: ${props => props.theme.spacing[2]};
