@@ -40,7 +40,6 @@ const Project = ({project, allProjects, className}) => {
               </div>
             </Grid>  
             <Grid item xs={6}>
-              {console.log(project.introImage.id)}
               {project.introImage && (
                 <Image
                   cloudName='djetpo84s'
