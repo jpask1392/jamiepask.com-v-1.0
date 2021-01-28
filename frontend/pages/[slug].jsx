@@ -26,6 +26,8 @@ const Page = ({page, globalData}) => {
           if (DynamicTagName) return <DynamicTagName key={block.id} data={block}/>
         })}
       </div>
+
+      // I want this on a new branch
     </AppLayout>
   )
 }
