@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_pages_text_over_images",
+  "info": {
+    "name": "text_over_image",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

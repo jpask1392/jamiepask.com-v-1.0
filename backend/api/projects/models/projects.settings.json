@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "Projects",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "featured_project_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "projects",
+      "dominant": true
+    },
+    "card_project_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "site_link": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "pages.hero",
+        "index-page.intro",
+        "pages.rich-text",
+        "pages.full-width-image"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_work_page_brands_galleries",
+  "info": {
+    "name": "brands_gallery",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

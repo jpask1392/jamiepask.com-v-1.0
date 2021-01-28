@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_global_navigations",
+  "info": {
+    "name": "Navigation",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pages": {
+      "collection": "page"
+    },
+    "nav_item_component": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.nav-item-component"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_global_splits",
+  "info": {
+    "name": "Split",
+    "icon": "arrow-circle-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "test": {
+      "type": "enumeration",
+      "enum": [
+        "morning",
+        "noon",
+        "evening"
+      ]
+    }
+  }
+}

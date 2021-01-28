@@ -5,6 +5,7 @@ yarn-error.log
 .next/
 dist/
 app/public
+archive/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/

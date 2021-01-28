@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_global_nav_items",
+  "info": {
+    "name": "nav_item",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

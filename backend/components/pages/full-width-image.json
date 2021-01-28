@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_pages_full_width_images",
+  "info": {
+    "name": "full-width-image",
+    "icon": "arrow-right"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "name": "Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "pages.hero",
+        "pages.intro-block",
+        "pages.text-over-image",
+        "pages.contact"
+      ]
+    },
+    "sub_pages": {
+      "collection": "page"
+    }
+  }
+}

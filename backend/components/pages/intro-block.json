@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_pages_intro_blocks",
+  "info": {
+    "name": "intro_block",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

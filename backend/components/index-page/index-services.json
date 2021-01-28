@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_index_page_index_services",
+  "info": {
+    "name": "Index Services",
+    "icon": "angle-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "type": "component",
+      "repeatable": true,
+      "component": "index-page.service"
+    }
+  }
+}

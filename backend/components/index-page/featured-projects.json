@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_index_page_featured_projects",
+  "info": {
+    "name": "Featured Projects",
+    "icon": "arrow-circle-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "projects": {
+      "collection": "projects"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "link_text": {
+      "type": "string"
+    },
+    "link_url": {
+      "type": "string"
+    }
+  }
+}

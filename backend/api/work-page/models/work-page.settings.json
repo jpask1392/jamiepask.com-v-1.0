@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "work_pages",
+  "info": {
+    "name": "Work Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "work_content": {
+      "type": "dynamiczone",
+      "components": [
+        "work-page.brands-gallery",
+        "pages.hero"
+      ]
+    }
+  }
+}

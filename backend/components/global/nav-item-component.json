@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_nav_item_components",
+  "info": {
+    "name": "nav_item_component",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "pages": {
+      "collection": "page"
+    }
+  }
+}

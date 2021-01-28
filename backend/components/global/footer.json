@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_global_footers",
+  "info": {
+    "name": "footer",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "cta_header": {
+      "type": "string"
+    },
+    "cta_text": {
+      "type": "string"
+    },
+    "cta_link": {
+      "type": "string"
+    },
+    "footer_text": {
+      "type": "richtext"
+    }
+  }
+}

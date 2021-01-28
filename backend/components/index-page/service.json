@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_index_page_services",
+  "info": {
+    "name": "Service",
+    "icon": "angle-up",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

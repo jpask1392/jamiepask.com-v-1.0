@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_pages_contacts",
+  "info": {
+    "name": "contact",
+    "icon": "align-right"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
