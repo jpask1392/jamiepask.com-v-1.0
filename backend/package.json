@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "slugify": "^1.4.6",
     "strapi": "3.3.2",
     "strapi-admin": "3.3.2",
